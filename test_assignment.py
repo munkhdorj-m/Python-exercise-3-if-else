@@ -1,39 +1,56 @@
 import pytest
-import numpy as np
-from assignment import greet, perform_operations, check_even_odd, compare_numbers, multiply_digits 
-
-
-def test1(capsys):
-    greet()
-    captured = capsys.readouterr()
-    assert captured.out.strip().lower() == "hello, world!"
-    
-def test2():
-    assert perform_operations(10, 2) == (12, 8, 20, 5)
-    assert perform_operations(5, 5) == (10, 0, 25, 1)
-    assert perform_operations(7, 3) == (10, 4, 21, 7/3)
-
-@pytest.mark.parametrize("input, expected", [
-    (2, "even"),
-    (3, "odd"),
-    (0, "even"),
-    (-5, "odd")
-])
-def test3(input, expected):
-    assert check_even_odd(input).lower() == expected
+from assignment import find_lesser_of_two_numbers, sum_of_numbers_not_divisible_by_11, find_largest_digit_of_3_digit_number, check_number_greater_than_10, convert_number_to_letter_rating
 
 @pytest.mark.parametrize("num1, num2, expected", [
-    (5, 3, 5),
-    (2, 7, 7),
-    (4, 4, "equal")
+    (5, 10, 5),
+    (15, 5, 5),
+    (7, 7, 7),
+    (100, 99, 99)
 ])
-def test4(num1, num2, expected):
-    result = compare_numbers(num1, num2)
-    if isinstance(result, str):
-        assert result.lower() == expected.lower()
-    else:
-        assert result == expected
+def test1(num1, num2, expected):
+    assert find_lesser_of_two_numbers(num1, num2) == expected
 
-@pytest.mark.parametrize("input, expected", [(253, 30), (123, 6), (999, 729), (321, 6)])
-def test5(input, expected):
-    assert multiply_digits(input) == expected
+@pytest.mark.parametrize("num1,num2,num3,num4,expected", [
+    (11, 22, 33, 44, 0),
+    (1, 2, 3, 4, 5, 15),
+    (10, 20, 30, 40, 150),
+    (11, 12, 13, 14, 39)
+])
+def test2(numbers, expected):
+    assert sum_of_numbers_not_divisible_by_11(num1,num2,num3,num4) == expected
+
+@pytest.mark.parametrize("number, expected", [
+    (123, 3),
+    (456, 6),
+    (789, 9),
+    (321, 3)
+])
+def test3(number, expected):
+    assert find_largest_digit_of_3_digit_number(number) == expected
+
+@pytest.mark.parametrize("number, expected_output", [
+    (5, "no"),
+    (10, "no"),
+    (11, "yes"),
+    (20, "yes")
+])
+def test4(capsys, number, expected_output):
+    check_number_greater_than_10(number)
+    captured = capsys.readouterr()
+    assert captured.out.strip().lower() == expected_output
+
+@pytest.mark.parametrize("number, expected", [
+    (95, 'a'),
+    (85, 'b'),
+    (75, 'c'),
+    (65, 'd'),
+    (50, 'f'),
+    (101, 'Error'),
+    (-5, 'Error')
+])
+def test5(number, expected):
+    if expected == 'Error':
+        with pytest.raises(ValueError):
+            convert_number_to_letter_rating(number)
+    else:
+        assert convert_number_to_letter_rating(number).strip().lower() == expected
