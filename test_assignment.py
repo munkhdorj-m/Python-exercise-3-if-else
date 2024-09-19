@@ -12,8 +12,8 @@ def test1(num1, num2, expected):
 
 @pytest.mark.parametrize("num1,num2,num3,num4,expected", [
     (11, 22, 33, 44, 0),
-    (1, 2, 3, 4, 5, 15),
-    (10, 20, 30, 40, 150),
+    (1, 2, 3, 4, 10),
+    (10, 20, 30, 40, 100),
     (11, 12, 13, 14, 39)
 ])
 def test2(numbers, expected):
