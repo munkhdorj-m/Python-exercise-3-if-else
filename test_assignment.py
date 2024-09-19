@@ -16,7 +16,7 @@ def test1(num1, num2, expected):
     (10, 20, 30, 40, 100),
     (11, 12, 13, 14, 39)
 ])
-def test2(numbers, expected):
+def test2(num1,num2,num3,num4, expected):
     assert sum_of_numbers_not_divisible_by_11(num1,num2,num3,num4) == expected
 
 @pytest.mark.parametrize("number, expected", [
