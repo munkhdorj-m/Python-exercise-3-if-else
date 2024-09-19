@@ -35,9 +35,7 @@ def test3(number, expected):
     (20, "yes")
 ])
 def test4(capsys, number, expected_output):
-    check_number_greater_than_10(number)
-    captured = capsys.readouterr()
-    assert captured.out.strip().lower() == expected_output
+    assert check_number_greater_than_10(number).strip().lower() == expected_output
 
 @pytest.mark.parametrize("number, expected", [
     (95, 'a'),
@@ -45,12 +43,8 @@ def test4(capsys, number, expected_output):
     (75, 'c'),
     (65, 'd'),
     (50, 'f'),
-    (101, 'Error'),
-    (-5, 'Error')
+    (101, 'error'),
+    (-5, 'error')
 ])
 def test5(number, expected):
-    if expected == 'Error':
-        with pytest.raises(ValueError):
-            convert_number_to_letter_rating(number)
-    else:
-        assert convert_number_to_letter_rating(number).strip().lower() == expected
+    assert convert_number_to_letter_rating(number).strip().lower() == expected
