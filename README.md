@@ -1,4 +1,4 @@
-# Python intro exercises
+# Python Intro Exercises
 
 ---
 
@@ -6,12 +6,16 @@
 
 **Problem:**
 
-Print "Hello, World!"
+Find the lesser of two numbers.
 
 **Example:**
 
-	Output:
-	Hello, World!
+| Input | Output |
+|-------|--------|
+| 5, 10 | 5      |
+| 15, 5 | 5      |
+| 7, 7  | 7      |
+| 100, 99 | 99    |
 
 ---
 
@@ -19,15 +23,16 @@ Print "Hello, World!"
 
 **Problem:**
 
-Perform the following operations on two numbers +,-,*,/  
+Find the sum from 3 numbers that are not divisible by 11.
 
 **Example:**
 
-	Input: 
- 	5.5 2
-	Output:
-	7.5 3.5 11.0 2.75
-
+| Input            | Output |
+|------------------|--------|
+| 11, 22, 33 | 0      |
+| 1, 2, 3   | 6     |
+| 10, 20, 30   | 60  |
+| 11, 12, 13    | 25    |
 
 ---
 
@@ -35,19 +40,16 @@ Perform the following operations on two numbers +,-,*,/
 
 **Problem:**
 
-Checks if the number is even or odd.
+Find the largest digit in a 3-digit number.
 
-**Example**
+**Example:**
 
- 	Input: 
-	5
-  	Output:
-	Odd
-
-  	Input: 
-	8
-  	Output:
-	Even
+| Input | Output |
+|-------|--------|
+| 123   | 3      |
+| 456   | 6      |
+| 789   | 9      |
+| 321   | 3      |
 
 ---
 
@@ -55,19 +57,16 @@ Checks if the number is even or odd.
 
 **Problem:**
 
-From two numbers determine which one is greater or if they are equal.
+Check if a number is greater than 10 and return "YES" or "NO".
 
-**Example**
+**Example:**
 
-	Input: 5 3
-	Output: 5
- 
-	Input: 2 7
-	Output: 7
- 
-	Input: 4 4
-	Output: Equal
-
+| Input | Output |
+|-------|--------|
+| 5     | NO     |
+| 10    | NO     |
+| 11    | YES    |
+| 20    | YES    |
 
 ---
 
@@ -75,16 +74,18 @@ From two numbers determine which one is greater or if they are equal.
 
 **Problem:**
 
-Find the multiplication of the digits of the given 3-digit number
+Convert a number to a letter grade based on the specified ranges.
 
-**Example**
+**Example:**
 
-	Input: 531
-	Output: 15
- 
-	Input: 123
-	Output: 6
- 
-	Input: 885
-	Output: 320
- 
+| Input | Output |
+|-------|--------|
+| 95    | A      |
+| 85    | B      |
+| 75    | C      |
+| 65    | D      |
+| 50    | F      |
+| 101   | Error  |
+| -5    | Error  |
+
+---
