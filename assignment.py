@@ -6,7 +6,7 @@ def find_lesser_of_two_numbers(num1, num2):
     pass
 
 # Exercise 2
-def sum_of_numbers_not_divisible_by_11(numbers):
+def sum_of_numbers_not_divisible_by_11(num1,num2,num3,num4):
     # Write your code here
     pass
 
