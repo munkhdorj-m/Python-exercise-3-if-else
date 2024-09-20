@@ -23,7 +23,7 @@ Find the lesser of two numbers.
 
 **Problem:**
 
-Find the sum from 3 numbers that are not divisible by 11.
+Find the sum from 4 numbers that are not divisible by 11.
 
 **Example:**
 
